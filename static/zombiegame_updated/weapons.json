@@ -1,0 +1,40 @@
+{
+	"badTier":{
+		"Macaroni Gun": {
+			"image":"gunImg",
+			"type":"gun",
+			"specs":{"damage":25,"color":"#DDDD00","capacity":30,"reloadTime":2450,"delay":150,"size":1},
+			"class":null
+		},
+		"M1887": {
+			"image":"m1887img",
+			"type":"gun",
+			"specs":{"damage":25,"color":"#FF0000","capacity":5,"reloadTime":2000,"delay":700,"shotgun":true,"spread":0.35,"rpc":5,"size":0.7},
+			"class":"shotgun"
+		},
+		"M1918 BAR": {
+			"image":"m1918Img",
+			"type":"gun",
+			"specs":{"damage":40,"color":"#a88f32","capacity":20,"reloadTime":2000,"delay":100,"shotgun":false,"size":1},
+			"class":"ar"
+		}
+	},
+	"okTier": {
+		"AK-47": {
+			"image":"akImg",
+			"type":"gun",
+			"specs":{"damage":40,"color":"#a88f32","capacity":20,"reloadTime":2000,"delay":100,"shotgun":false,"size":1},
+			"class":"ar"
+		}
+	},
+	"goodTier":{},
+	"opTier":{},
+	"lmg": {
+		"testlmg": {
+			"image":"wallImg",
+			"type":"gun",
+			"specs":{"damage":40,"color":"#a88f32","capacity":200,"reloadTime":2000,"delay":100,"shotgun":false,"size":1},
+			"class":"lmg"
+		}
+	}
+}

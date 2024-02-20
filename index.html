@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>zombie warz</title>
+		<!-- js -->
+		<script type="text/javascript"
+			src="./static/multiplayer_3d_game/gl-matrix.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+		<link rel="stylesheet" href="./static/multiplayer_3d_game/multiplayer_3d_game.css">
+		<!-- fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<canvas id="canvas" width="1000" height="1000" style="width: 100%; height:100%;"></canvas>
+		<canvas id="overlay" width="1000" height="1000"
+		style="width: 100%; height:100%; position:absolute; top:0;left:0;"></canvas>
+		<p id = "debugStuff" style="position: absolute;left:10;top:0;font-weight:bold;"></p>
+		<!-- ------home screen------- -->
+		<div class="homeDiv" id="homeDiv">
+			<div class="homeDivInner" id="homeDivInner">
+				<center>
+					<h1>Zombie Wars (now 3D)</h1>
+					<input type="text" id="nameBox" placeholder="Your Name">
+					<br>
+					<div id="joinDiv" style="display:none;">
+						<input type="text" id="gameIDbox" placeholder="Game Name"><br>
+						<p id="joinMessage"></p>
+						<button onclick="joinGame();">Join</button>
+					</div>
+					<div id="hostDiv" style="display:none;">
+						<input type="text" id="hostIDbox" placeholder="Game Name"><br>
+						<p id="hostMessage"></p>
+						<button onclick="hostGame();">Join</button>
+					</div>
+					<br><br>
+					<button id="startBtn" onclick = "startGame();">Play</button>
+					<br><br>
+					<button id="joinMultiplayer" onclick="multiplayerMenu('joinDiv','joinMonkey.js');">Join Multiplayer</button>
+					<button id="hostMultiplayer" onclick="multiplayerMenu('hostDiv','hostMonkey.js');">Host Multiplayer</button>
+					<br><br>
+					<button id="helpBtn" onclick="gameHelp();">How to Play</button>
+					<div id="helpDiv" style="display:none;">
+						<strong>OBJECTIVE: shoot the zombies ig<br>
+						Controls</strong><br>
+						<p>WASD to move,  click to shoot, move mouse to look around</p><br>
+						<strong>Weapons</strong><br>
+						<p>When you kill zombies, they have a chance to drop a weapon. Keep a lookout for them!
+							Some are pretty OP.</p>
+					</div>
+				</center>
+			</div>
+		</div>
+		<!-- ------pause------- -->
+		<div id="pauseDiv" class="homeDivInner">
+			<center>
+				<h1>Game Paused</h1>
+				<p>Click outside this box to resume</p>
+				<br><br><br><br><br><br>
+				<button onclick="document.getElementById('pauseDiv').style.display='none';">Hide Banner</button>
+			</center>
+		</div>
+
+		<img src="./static/zombiegame_updated_3d/volume on.png" id="volumeButton" onclick="toggleVolume();">
+
+		<!-- ------upgrades------- -->
+		<div id = "upgradeDiv">
+			<strong>Upgrades (press U)</strong>
+		</div>
+		<div id = "upgradeMenu" style = "display:none;">
+			<h1>WEAPON UPGRADES</h1>
+			<div id = "upgradeList">
+				<div id = "upgradeItem" style = "display:none;">
+					<h2 id="upHeading">EMPTY</h2>
+					<p id="upDesc">You have no upgrades yet. Explore the map to try and find one!</p>
+					<button id="upButton">Apply To Current Weapon</button>
+				</div>
+			</div>
+		</div>
+		<!-- ------you died!------- -->
+		<div id="deadDiv">
+			<div id="deadMsg">
+				<center>
+					<h1 style="font-size:5rem;">YOU DIED!!!</h1>
+					<strong id="deadReason" style="font-size:2rem;"></strong>
+					<button onclick="fetch('https://zombiewars.repl.co/postscore?s='+playerStats.zombiesKilled+'&n='+playerName);"
+						>post your score ig</button>
+				</center>
+			</div>
+		</div>
+		<!-- ------------------ -->
+		<script type="text/javascript"
+			src="./static/zombiegame_updated_3d/clouds.js" defer></script>
+	 <script type="text/javascript"
+			src="./static/zombiegame_updated_3d/shaders2.js" defer></script>
+	<script type="text/javascript"
+			src="./static/zombiegame_updated_3d/division2.js" defer></script>
+	<script type="text/javascript" src="./static/zombiegame_updated_3d/keys.js">
+	</script>
+	<script type="text/javascript"
+			src="./static/zombiegame_updated_3d/funcs.js" defer></script>
+		<script type="text/javascript"
+			src="./static/multiplayer_3d_game/perlin.js" defer></script>
+		<script type="text/javascript"
+			src="./static/zombiegame_updated_3d/classes.js" defer></script>
+		<script type="text/javascript"
+			src="./static/zombiegame_updated_3d/weapons.js" defer></script>
+		<script type="text/javascript" id="monkeyScript"></script>
+		<script type="text/javascript"
+			src="./static/zombiegame_updated_3d/minecraft.js" defer></script>
+		<script defer>var easdf;
+			/*var a;
+			document.onclick = ()=>{
+				var a = new kf.KeyframerScalar(a, 0, 1, 2000, kf.CLASSIC, true, function(current) {
+					settings.lightCol = glMatrix.vec3.fromValues(1, current, 0.8)
+			}, ()=>{})
+			}*/
+		</script>
+</body>
+</html>
