@@ -345,19 +345,19 @@ function genClouds() {
 }
 
 function loadModels() {
-	loadObj("/static/multiplayer_3d_game/zombie.obj", "/static/multiplayer_3d_game/zombie.mtl", function(res) {
+	loadObj("./static/multiplayer_3d_game/zombie.obj", "./static/multiplayer_3d_game/zombie.mtl", function(res) {
 		models.zombie = res;
 		dO("set zombie model.");
 	});
-	loadObj("/static/multiplayer_3d_game/zombieboss.obj", "/static/multiplayer_3d_game/zombieboss.mtl", function(res) {
+	loadObj("./static/multiplayer_3d_game/zombieboss.obj", "./static/multiplayer_3d_game/zombieboss.mtl", function(res) {
 		models.boss = res;
 		dO("set boss model.");
 	});
-	loadObj("/static/multiplayer_3d_game/airdrop.obj", "/static/multiplayer_3d_game/airdrop.mtl", function(res) {
+	loadObj("./static/multiplayer_3d_game/airdrop.obj", "./static/multiplayer_3d_game/airdrop.mtl", function(res) {
 		models.airdrop = res;
 		dO("set airdrop model.");
 	});
-	loadObj("/static/multiplayer_3d_game/vax.obj", "/static/multiplayer_3d_game/vax.mtl", function(res) {
+	loadObj("./static/multiplayer_3d_game/vax.obj", "./static/multiplayer_3d_game/vax.mtl", function(res) {
 		models.vax = res;
 		dO("set vax model.");
 	});
