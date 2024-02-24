@@ -1,6 +1,6 @@
 console.log("weapons.js loaded.");
 function genNoise(path) {
-	return "/static/zombiegame_updated_3d/sfx/"+path+".mp3";
+	return "./static/zombiegame_updated_3d/sfx/"+path+".mp3";
 }
 
 var stinkyFartGun = {name: "Fart Gun", texCoordStart: [456/texW, 100/texH], specs: {damage: 30, delay: 300, reloadTime: 2300, capacity: 10, spread: 40, speed: 0.7, fire: genNoise("beans_fire"), rel: genNoise("beans_fire"),
