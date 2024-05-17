@@ -259,14 +259,14 @@ function divisionOnLoad(gl) {
 	oTex.src = "./static/zombiegame_updated_3d/grass.png";
 	noise.seed(6969); // the funny number
 	// size the canvas
-	canvas.width = parseInt(
-		document.defaultView.getComputedStyle(canvas, "wot do i put here").width.replace("px", ""), 10);
-	canvas.height = parseInt(
-		document.defaultView.getComputedStyle(canvas, "wot do i put here").height.replace("px", ""), 10);
+	canvas.width = "100%;
+	canvas.height = "100%;
 	gl.viewport(0, 0, canvas.width, canvas.height);
 	dO("resolutions set.");
 
 	overlay = document.getElementById("overlay");
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
 	overlay.width = canvas.width;
 	overlay.height = canvas.height;
 	oCtx = overlay.getContext("2d");
